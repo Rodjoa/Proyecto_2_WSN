@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Text, View, Image } from 'react-native';
+
+import HomeScreen from './src/screens/HomeScreen';
+import Conectado_a_Torre from './src/screens/Conectado_a_Torre';
+import Estado_Torre from './src/screens/Estado_Torre';
+import Input_Text from './src/screens/Input';
+import Update_Text from './src/screens/Input';
+import Mostrar_Torres from './src/screens/Input';
+import Add_Tower_toList from './src/screens/Input';
+import Agregar_Torre from './src/screens/Agregar_Torre';
+import mostrar_imagen from './src/screens/mostrar_imagen';
+
+
+
+
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+  return <mostrar_imagen/>;
+  
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
