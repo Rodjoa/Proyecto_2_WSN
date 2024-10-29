@@ -1,5 +1,6 @@
+/*
 import React from 'react';
-import { StyleSheet, View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
+import { StyleSheet, View, Text, Image, ImageBackground } from 'react-native';
 import img from './assets/Torre_individual.png'
 
 
@@ -28,3 +29,5 @@ const styles = StyleSheet.create({
 
     },
 });
+
+*/

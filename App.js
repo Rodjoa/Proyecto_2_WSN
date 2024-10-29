@@ -18,7 +18,7 @@ import mostrar_imagen from './src/screens/mostrar_imagen';
 
 export default function App() {
 
-  return <mostrar_imagen/>;
+  return <Agregar_Torre/>;
   
 }
 

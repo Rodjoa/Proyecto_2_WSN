@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
 
-export default function Conectado_a_Torre() {
+export default function Estado_Torre() {
   return (
     <View style={styles.container}>
       {/* Imagen a la izquierda */}
