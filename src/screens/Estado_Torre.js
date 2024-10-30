@@ -1,15 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Image, Button, buttonContainer, ImageBackground } from 'react-native';
 
-export default function Estado_Torre() {
+export default function Estado_Torre({navigation}) {
   return (
     <View style={styles.container}>
-      {/* Imagen a la izquierda */}
-      <Image
-        source={{uri: './assets/Torre_individual.png'}} // Usar require para evitar problemas
-        resizeMode="cover"
-        style={styles.image}
-      />
+      
 
       {/* Texto en la esquina superior derecha */}
       <View style={styles.textContainer}>
@@ -17,6 +12,13 @@ export default function Estado_Torre() {
         <Text style={styles.data}>Nivel de agua: </Text>
         <Text style={styles.data}>Carga de batería: </Text>
       </View>
+
+      <View style={styles.buttonContainer}>
+          <Button
+            title="Volver"
+            onPress={() => navigation.navigate("Connection")}
+          />
+        </View>
     </View>
   );
 }
@@ -44,7 +46,8 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   data: {
-    fontSize: 18,
-    color: 'gray',
+    fontSize: 24,         // Tamaño de letra cómodo para lectura
+    color: 'gray',         // Color gris para un estilo más sutil
+  
   },
 });

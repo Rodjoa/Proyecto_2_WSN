@@ -1,10 +1,10 @@
 import React, { useState } from 'react'; // Importa useState
-import { Text, View, Image } from 'react-native';
+import { Text, View } from 'react-native';
 import {SafeAreaView, StyleSheet, TextInput, Button, ScrollView} from 'react-native';
 
 
 
-export default function Agregar_Torre( ){
+export default function Agregar_Torre({navigation} ){
 
     const [InputEspecie, setInputEspecie] = useState('');
   
@@ -50,6 +50,12 @@ export default function Agregar_Torre( ){
             )
           })}
       </ScrollView>
+      <View style={styles.buttonContainer}>
+          <Button
+            title="Volver"
+            onPress={() => navigation.navigate("Connection")}
+          />
+        </View>
     </View>
     )
   }

@@ -1,20 +1,30 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, ImageBackground } from 'react-native';
-//source={{uri: 'assets:/Homeimage.png'}} resizeMode="cover"
- 
-export default function HomeScreen() {
-  return (
-    <ImageBackground
-      
-      source={'./assets/Homeimage.png'} resizeMode="cover" 
+import { View, Text, Button, StyleSheet} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-      style={styles.background}
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>Tower Garden App</Text>
-        <Button title="Conectarse a una torre" onPress={() => alert('Conectando...')} />
-      </View>
-    </ImageBackground>
+import {Conectado_a_Torre} from './Conectado_a_Torre' 
+
+
+export default function HomeScreen({navigation}) {
+  return (
+
+
+
+
+    
+        <View style={styles.container}>
+          <Text style={styles.title}>Tower Garden App</Text>
+          <Button title="Conectarse a una torre" onPress={() => navigation.navigate("Connection")} />
+        </View>
+    
+    
+     
+
+
+
+
+
   );
 }
 
@@ -31,7 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 38,
     fontWeight: 'bold',
     marginBottom: 20,
-    color: 'white',
+    color: 'black',
     padding:20,
   },
 });

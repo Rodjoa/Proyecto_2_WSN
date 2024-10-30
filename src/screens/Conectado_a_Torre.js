@@ -3,14 +3,10 @@ import { View, Text, Button, StyleSheet, ImageBackground } from 'react-native';
 
 //source={require('./assets/Homeimage.png')} //TESTEO EN MOVIL NO FUNCIONA
 //source={'./assets/Homeimage.png'}         // TESTEO EN WEB
-export default function Conectado_a_Torre() {
+export default function Conectado_a_Torre({navigation}) {
   return (
-    <ImageBackground
-       // Usar require para evitar errores de carga
-        source={'./assets/Homeimage.png'}         // TESTEO EN WEB
-        resizeMode="cover"
-        style={styles.background}
-    >
+    
+    
       <View style={styles.container}>
         <Text style={styles.title}>Conectado a torre x</Text>
 
@@ -18,32 +14,40 @@ export default function Conectado_a_Torre() {
         <View style={styles.buttonContainer}>
           <Button
             title="Consultar estado de la torre"
-            onPress={() => alert('Conectando...')}
+            onPress={() =>  navigation.navigate("Tower_State")}
           />
         </View>
 
         <View style={styles.buttonContainer}>
           <Button
             title="Consultar estado de la red"
-            onPress={() => alert('Consultando...')}
+            onPress={() => navigation.navigate("Tower_State")}
           />
         </View>
 
         <View style={styles.buttonContainer}>
           <Button
             title="Agregar torre"
-            onPress={() => alert('Agregando torre...')}
+            onPress={() => navigation.navigate("Add_Tower")}
           />
         </View>
 
         <View style={styles.buttonContainer}>
           <Button
             title="Borrar torre"
-            onPress={() => alert('Borrando torre...')}
+            onPress={() => navigation.navigate("Remove_Tower")}
           />
         </View>
+
+        <View style={styles.buttonContainer}>
+          <Button
+            title="Desconectarse de la Torre"
+            onPress={() => navigation.navigate("Home")}
+          />
+        </View>
+
       </View>
-    </ImageBackground>
+    
   );
 }
 
@@ -52,6 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    color: 'white'
   },
   container: {
     alignItems: 'center',
@@ -61,7 +66,7 @@ const styles = StyleSheet.create({
     fontSize: 38,
     fontWeight: 'bold',
     marginBottom: 30,
-    color: 'white',
+    color: 'black',
   },
   buttonContainer: {
     marginVertical: 10, // Espacio entre cada botón
