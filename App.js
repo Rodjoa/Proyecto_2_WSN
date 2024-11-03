@@ -1,29 +1,100 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React from 'react';  //Librerias React / Native
+import { Text, View, Button } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 
-import HomeScreen from './src/screens/HomeScreen';
+import HomeScreen from './src/screens/HomeScreen';  
 import Conectado_a_Torre from './src/screens/Conectado_a_Torre';
 import Estado_Torre from './src/screens/Estado_Torre';
-import Input_Text from './src/screens/Input';
-import Update_Text from './src/screens/Input';
-import Mostrar_Torres from './src/screens/Input';
-import Add_Tower_toList from './src/screens/Input';
 import Agregar_Torre from './src/screens/Agregar_Torre';
 import Borrar_Torre from './src/screens/Borrar_Torre';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack'; //Navegacion entre paginas
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import {StoreData, GetData, RemoveData, UpdateData } from './src/screens/Storage'
+
+
+/*
+
+
+const torres = [
+  { id: '1', especie: 'Cebolla', key: '1' },
+  { id: '2', especie: 'Tomate', key: '2' }
+];
+
+
+
+const App = () => {
+  const handleStoreData = () =>{
+    StoreData('1',Torre_1)
+  }
+
+  const handleGetData = () =>{
+    GetData('1')
+  }
+
+  const handleRemoveData = () =>{
+    RemoveData('1')
+  }
+
+  const handleUpdateData = () =>{
+    UpdateData('1', Torre_2)
+  }
+
+
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ marginBottom: 10 }}>
+        <Button title="        Guardar        " onPress={handleStoreData} />
+      </View>
+      <View style={{ marginBottom: 10 }}>
+        <Button title="  Mostrar datos  " onPress={handleGetData} />
+      </View>
+      <View style={{ marginBottom: 10 }}>
+        <Button title="   Borrar datos    " onPress={handleRemoveData} />
+      </View>
+      <View style={{ marginBottom: 10 }}>
+        <Button title="Actualizar datos" onPress={handleUpdateData} />
+      </View>
+    </View>
+  );
+
+}
+
+export default App;
+
+
+/*
+// return(
+  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+  <Button title = "Guardar" onPress={handleStoreData}/>
+  <Button title = "Mostrar datos" onPress={handleGetData}/>
+  <Button title = "Borrar datos" onPress={handleRemoveData}/>
+  <Button title = "Actualizar datos" onPress={handleUpdateData}/>
+ </View>
+)
+
+
+*/
 
 
 
 
-//navegaremos entre Homescreen y Conectado_a_Torre
+
+
+
+
+
+
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return(
 
-    //falta crear archivo <Stack.Screen name = "Network_State" component = {Estado_Red}/> aqui trae la bd creada con AsyncStorage
+  
+    
 
   <NavigationContainer>
         <Stack.Navigator initialRouteName='Home'>
@@ -45,8 +116,10 @@ export default function App() {
 
 
 
-/*
-export default function App() {
-  return<Borrar_Torre/>
-}
-  */
+
+
+
+
+
+
+

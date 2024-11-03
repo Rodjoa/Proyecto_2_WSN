@@ -17,6 +17,8 @@ export default function Borrar_Torre({navigation} ){
       {Especie: 'menta',    id:'6',   key: '6'},
     ])
   
+//Despues de borrar la torre debe recorrer del primer al ultimo elemento asignando id de 1 en adelante
+
     const BorrarTorre = (InputId) =>{
       //  setTorres([ Torres - (Torres.item.id==InputId)  ])
       setTorres(
