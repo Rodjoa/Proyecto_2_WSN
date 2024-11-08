@@ -1,6 +1,7 @@
+/*
 import React, { useState } from 'react'; // Importa useState
 import {SafeAreaView, StyleSheet, TextInput, Text, View, Button, ScrollView} from 'react-native';
-
+*/
 
 /*
 //TEST 1: escribir texto, almacenar en variable y mostrarla en pantalla
@@ -117,7 +118,7 @@ export default function Mostrar_Torres(){
 
 
 //TEST 5: AGREGA ELEMENTO A LISTA, MEDIANTE INPUT DE TEXTO
-
+/*
 export default function Add_Tower_toList(){
 
   const [InputEspecie, setInputEspecie] = useState('');
@@ -169,9 +170,9 @@ export default function Add_Tower_toList(){
 }
 //FIN AGREGAR TORRE
 
+*/
 
-
-
+/*
 
 
 
@@ -209,3 +210,4 @@ const styles = StyleSheet.create({
 
 
 });
+*/

@@ -8,22 +8,11 @@ import {Conectado_a_Torre} from './Conectado_a_Torre'
 
 export default function HomeScreen({navigation}) {
   return (
-
-
-
-
     
         <View style={styles.container}>
           <Text style={styles.title}>Tower Garden App</Text>
           <Button title="Conectarse a una torre" onPress={() => navigation.navigate("Connection")} />
         </View>
-    
-    
-     
-
-
-
-
 
   );
 }

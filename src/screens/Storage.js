@@ -5,7 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'; //Navegacion entre paginas
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import App from '../../App';
+
 
 //import Lista_Torres (ARRAY)
 
@@ -27,7 +27,7 @@ export const StoreData = async (key, value) => {
 export const SaveTorres = async (updatedTorres) => {
   try {
     await AsyncStorage.setItem('torres', JSON.stringify(updatedTorres));
-    console.error('Linea asyncstorage de funcion SaveTorres ejecutada');
+    //console.error('Linea asyncstorage de funcion SaveTorres ejecutada');
   } catch (e) {
     console.error('Error al guardar las torres:', e);
   }

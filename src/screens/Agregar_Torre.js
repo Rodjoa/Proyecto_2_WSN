@@ -5,6 +5,7 @@ import { SaveTorres } from './Storage';
 
 
 
+
 export default function List({ navigation }) {
   const [Torres, setTorres] = useState([]);
   
@@ -26,13 +27,14 @@ export default function List({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Agregar_Torre navigation={navigation} Torres={Torres} setTorres={setTorres} />
+      <Borrar_Torre navigation={navigation} Torres={Torres} setTorres={setTorres} />
     </SafeAreaView>
   );
 }
 
 
 // El componente Agregar_Torre ahora recibe Torres y setTorres como props
-function Agregar_Torre({ navigation, Torres, setTorres }) {
+export function Agregar_Torre({ navigation, Torres, setTorres }) {
   const [InputEspecie, setInputEspecie] = useState('');
 
   const agregarTorre = () => {
@@ -74,6 +76,72 @@ function Agregar_Torre({ navigation, Torres, setTorres }) {
     </View>
   );
 }
+
+//AÑADIMOS Borrar_Torre, tal cual está en ese archivo
+
+export function Borrar_Torre({navigation, Torres, setTorres} ){
+
+  const [InputId, setInputId] = useState('');
+
+
+
+//Despues de borrar la torre debe recorrer del primer al ultimo elemento asignando id de 1 en adelante
+
+const BorrarTorre = async (InputId) => {
+  try {
+    // Filtrar las torres para eliminar la torre con el id proporcionado
+    const Torres_Act = Torres.filter(torre => torre.id !== InputId);
+    
+    // Actualizar el estado
+    setTorres(Torres_Act);
+
+    // Guardar la lista de torres actualizada en AsyncStorage
+    await SaveTorres(Torres_Act);
+
+    // Limpiar el campo de entrada
+    setInputId('');
+  } catch (e) {
+    console.error('Error al borrar la torre:', e);
+  }
+};
+
+//entre los atributos del TextInput es su valor
+
+//PROBLEMA AL LLAMAR BorrarTorre con el argumento (InputId)
+  return(
+    <View style = {styles.container}>
+      <TextInput style={styles.input}
+      placeholder='Indique Id de la torre'
+      value = {InputId}
+      onChangeText={(val) => setInputId(val)}  />
+
+      <Button title="Eliminar Torre" onPress={()=>BorrarTorre(InputId)} />
+
+      <ScrollView>
+        {Torres.map((item) => {
+          return(
+            <View key = {item.key} >
+              <Text style={styles.item}>  Torre id: {item.id} {"\n"}   Especie: {item.Especie}  </Text>
+
+            </View>
+          )
+        })}
+    </ScrollView>
+    <View style={styles.buttonContainer}>
+        <Button
+          title="Volver"
+          onPress={() => navigation.navigate("Connection")}
+        />
+      </View>
+  </View>
+  )
+}
+
+//Fin Borrar_Torre
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {

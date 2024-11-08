@@ -6,7 +6,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import Conectado_a_Torre from './src/screens/Conectado_a_Torre';
 import Estado_Torre from './src/screens/Estado_Torre';
 import Agregar_Torre from './src/screens/Agregar_Torre';
-import Borrar_Torre from './src/screens/Borrar_Torre';
+import Borrar_Torre from './src/screens/Agregar_Torre';
 
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'; //Navegacion entre paginas
@@ -81,20 +81,11 @@ export default App;
 
 
 
-
-
-
-
-
-
-
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return(
 
-  
-    
 
   <NavigationContainer>
         <Stack.Navigator initialRouteName='Home'>

@@ -1,30 +1,27 @@
-import React, { useState } from 'react'; // Importa useState
+/*import React, { useState } from 'react'; // Importa useState
 import { Text, View } from 'react-native';
 import {SafeAreaView, StyleSheet, TextInput, Button, ScrollView} from 'react-native';
+*/
 
+/*
 
-
-export default function Borrar_Torre({navigation} ){
+export function Borrar_Torre({navigation, Torres, setTorres} ){
 
     const [InputId, setInputId] = useState('');
   
-    const [Torres, setTorres] = useState([
-      {Especie: 'tomate',   id:'1',   key: '1'},
-      {Especie: 'cebolla',  id:'2',   key: '2'},
-      {Especie: 'coliflor', id:'3',   key: '3'},
-      {Especie: 'naranja',  id:'4',   key: '4'},
-      {Especie: 'cebolla',  id:'5',   key: '5'},
-      {Especie: 'menta',    id:'6',   key: '6'},
-    ])
+
   
 //Despues de borrar la torre debe recorrer del primer al ultimo elemento asignando id de 1 en adelante
 
     const BorrarTorre = (InputId) =>{
       //  setTorres([ Torres - (Torres.item.id==InputId)  ])
-      setTorres(
+      const Torres_Act = (
         Torres.filter(torre =>
           torre.id !== InputId
-        ));
+      ));
+
+        setTorres(Torres_Act)
+        SaveTorres(Torres_Act)
 
         setInputId('')
 
@@ -55,7 +52,7 @@ export default function Borrar_Torre({navigation} ){
       <View style={styles.buttonContainer}>
           <Button
             title="Volver"
-            onPress={() => navigation.navigate("Connection")}
+            onPress={() => navigation.navigate("Remove_Tower")}
           />
         </View>
     </View>
@@ -66,9 +63,9 @@ export default function Borrar_Torre({navigation} ){
   
   
   
+  */
   
-  
-  
+  /*
   
   
   //esto de abajo acompaña a las dos funciones
@@ -103,4 +100,4 @@ export default function Borrar_Torre({navigation} ){
   
   
   });
-  
+  */
