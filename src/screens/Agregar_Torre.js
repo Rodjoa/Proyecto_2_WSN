@@ -24,10 +24,15 @@ export default function List({ navigation }) {
     loadTorres();
   }, []);
 
+
+
+  //<Borrar_Torre navigation={navigation} Torres={Torres} setTorres={setTorres} />
+    //agregamos cond press para una u otra vista
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Agregar_Torre navigation={navigation} Torres={Torres} setTorres={setTorres} />
       <Borrar_Torre navigation={navigation} Torres={Torres} setTorres={setTorres} />
+      
     </SafeAreaView>
   );
 }
@@ -102,7 +107,7 @@ const BorrarTorre = async (InputId) => {
     setTorres(torresActualizadas);
 
     // Guardar la lista de torres actualizada en AsyncStorage
-    await SaveTorres(Torres);
+    await SaveTorres(torresActualizadas);
 
     // Limpiar el campo de entrada
     setInputId('');

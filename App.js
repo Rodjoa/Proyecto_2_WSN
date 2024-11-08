@@ -86,6 +86,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return(
 
+    
 
   <NavigationContainer>
         <Stack.Navigator initialRouteName='Home'>
@@ -94,6 +95,7 @@ export default function App() {
           <Stack.Screen name = "Tower_State" component = {Estado_Torre}/>
           <Stack.Screen name = "Add_Tower" component = {Agregar_Torre}/>
           <Stack.Screen name = "Remove_Tower" component = {Borrar_Torre}/>
+          
 
 
           

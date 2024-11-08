@@ -27,17 +27,18 @@ export default function Conectado_a_Torre({navigation}) {
 
         <View style={styles.buttonContainer}>
           <Button
-            title="Agregar torre"
+            title="Agregar / Eliminar torre"
             onPress={() => navigation.navigate("Add_Tower")}
           />
         </View>
 
-        <View style={styles.buttonContainer}>
+        {/*<View style={styles.buttonContainer}>
           <Button
             title="Borrar torre"
             onPress={() => navigation.navigate("Remove_Tower")}
           />
         </View>
+        */}
 
         <View style={styles.buttonContainer}>
           <Button
