@@ -91,12 +91,18 @@ const BorrarTorre = async (InputId) => {
   try {
     // Filtrar las torres para eliminar la torre con el id proporcionado
     const Torres_Act = Torres.filter(torre => torre.id !== InputId);
+    // Actualizamos los IDs de las torres para que sean consecutivos
+    const torresActualizadas = Torres_Act.map((torre, index) => ({
+      ...torre,
+      id: (index + 1).toString(),
+      key: (index + 1).toString(),
+    }));
     
     // Actualizar el estado
-    setTorres(Torres_Act);
+    setTorres(torresActualizadas);
 
     // Guardar la lista de torres actualizada en AsyncStorage
-    await SaveTorres(Torres_Act);
+    await SaveTorres(Torres);
 
     // Limpiar el campo de entrada
     setInputId('');
